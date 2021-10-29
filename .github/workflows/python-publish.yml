@@ -34,6 +34,10 @@ jobs:
       with:
         user: __token__
         password: ${{ secrets.PYPI_API_TOKEN }}
+    - name: Docker Build Python
+      run: |
+       docker build ./python -t
+      
         
     - name: Build And Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v4
